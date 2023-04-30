@@ -1,0 +1,23 @@
+[
+    {
+        "login": "ekolodziej",
+        "password": "test",
+        "fullname": "Ewelina Kołodziej",
+        "phone": "555",
+        "email": "test@example.com"
+    },
+    {
+        "login": "ela",
+        "password": "piesek",
+        "fullname": "Elżbieta Kołodziej",
+        "phone": "444",
+        "email": "test@example.com"
+    },
+    {
+        "login": "iza",
+        "password": "kwiatek",
+        "fullname": "Izabela Kołodziej",
+        "phone": "333",
+        "email": "test@example.com"
+    }
+]

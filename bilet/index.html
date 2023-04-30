@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+    <link rel="shortcut icon" href="./images/the-plane-g9573357ce_1280.png" type="">
+
+    <meta charset="utf-8">
+    <title>Lataj z nami</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+    <!-- JS -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.steps.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    <script src="js/ui.datepicker-pl.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+</head>
+
+<body>
+<!-- HEADER -->
+<header>
+
+    <nav class="navbar bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Lataj z nami!
+                <iconify-icon icon="mdi:airplane" width="32" height="32"></iconify-icon>
+            </a>
+
+            <div class="d-flex mt-3" id="navbarNav">
+                <div class="navbar-nav">
+                    <p class="nav-item"><img src="./images/plane-top.jpg" alt=""/></p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<!-- MAIN -->
+<main>
+
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header  bg-dark text-white">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Logowanie</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="login" class="col-form-label">Login</label>
+                                <input type="text" size="30" name="login" class="form-control" id="login"/>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="col-form-label">Hasło:</label>
+                                <input class="form-control" id="password" type="password" name="password"/>
+
+                            </div>
+                            <div class="mb-3">
+                                <p class="login-error text-danger">Podaj poprawne dane</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                        <button type="button" class="btn btn-primary login-button">Zaloguj</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="weather">
+                    <p class="current-date"></p>
+
+                    <div id="ww_bce9e4ec17e74" v='1.3' loc='id' a='{"t":"responsive","lang":"pl","sl_lpl":1,"ids":["wl3846"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"rgba(241,238,229,1)","cl_font":"rgba(131,123,107,1)","cl_cloud":"#d4d4d4","cl_persp":"#2196F3","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","cl_odd":"#00000000"}'>Weather Data Source: <a href="https://wetterlabs.de/wetter_katowice/woche/" id="ww_bce9e4ec17e74_u" target="_blank">wettervorhersage Katowice 7 tage</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_bce9e4ec17e74"></script>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-white">
+                <!-- Step 1 -->
+                <div class="wizard-form">
+                    <div class="wizard-header">
+                        <h1>Rozkład lotów</h1>
+                        <h2>Bilety z Polski już od 69 PLN</h2>
+                        <h3>Wybierz odpowiedni dla siebie kierunek</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <form id="order-form" class="main-form" action="#" method="post">
+                    <h2>1</h2>
+                    <section class="current" data-step="1">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" disabled value="Katowice"/>
+                            <span class="input-group-text"><i class="fa fa-plane"></i></span>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <select name="flight" class="form-control" id="flight">
+                                <option value="" disabled selected>Przylot</option>
+                                <option value="WAW">Warszawa</option>
+                                <option value="OSL">Oslo</option>
+                                <option value="TLV">Tel Awiw</option>
+                            </select>
+                            <span class="input-group-text"><i class="fa fa-globe"></i></span>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <select class="form-control" name="persons" id="persons">
+                                <option value="" disabled selected>Podaj ilość osób</option>
+                                <option value="1">1 osoba</option>
+                                <option value="2">2 osoby</option>
+                                <option value="3">3 osoby</option>
+                                <option value="4">4 osoby</option>
+                                <option value="5">5 osób</option>
+                                <option value="6">6 osób</option>
+                            </select>
+                            <span class="input-group-text"><i class="fa fa-user-o"></i></span>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="datepicker" type="text"
+                                   placeholder="Wybierz datę">
+                            <span class="input-group-text"> <i class="fa fa-calendar-o"></i></span>
+                        </div>
+
+
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="timepicker" value="Wybierz godzinę"/>
+                            <span class="input-group-text"><i class="fa fa-clock-o"></i></span>
+                        </div>
+
+                    </section>
+
+                    <!-- Step 2 -->
+
+                    <h2>2</h2>
+                    <section data-step="2">
+                        <div class="input-group mb-3">
+                            <select class="form-control" name="luggage" id="luggage">
+                                <option value="" disabled selected>Wybierz bagaż</option>
+                                <option value="ZWY">Zwykły</option>
+                                <option value="REJ">Rejestrowany</option>
+                            </select>
+                            <span class="input-group-text"><i class="fa fa-suitcase"></i></span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <select class="form-control" name="place" id="place">
+                                <option value="" disabled selected>Chcę wybrać miejsce</option>
+                                <option value="1">Tak</option>
+                                <option value="0">Nie</option>
+                            </select>
+                            <span class="input-group-text"><i class="fa fa-users"></i></span>
+                        </div>
+                    </section>
+
+                    <!--STEP 3-->
+                    <h2>3</h2>
+                    <section data-step="3">
+                        <div class="input-group mb-3">
+                            <select class="form-control" name="payment" id="payment">
+                                <option value="" disabled selected>Wybierz formę płatności</option>
+                                <option>PayPal</option>
+                                <option>PayU</option>
+                                <option>Blik</option>
+                                <option>Karta płatnicza</option>
+                                <option>Gotówką w kasie</option>
+                            </select>
+                            <span class="input-group-text"><i class="fa fa-money"></i></span>
+                        </div>
+                    </section>
+                    <!-- step 4-->
+
+                    <h2>4</h2>
+                    <section data-step="4">
+                        <div class="inner">
+                            <div class="form-row table-responsive">
+                                <table class="summary" collspan="" rowspan="">
+                                    <tbody>
+                                    <tr class="space-row">
+                                        <th>Zamawiający:</th>
+                                        <td id="fullname-val">--- podaj swoje dane ---</td>
+                                    </tr>
+                                    <tr class="space-row">
+                                        <th>Telefon:</th>
+                                        <td id="phone-val">--- podaj telefon ---</td>
+                                    </tr>
+                                    <tr class="space-row">
+                                        <th>Email:</th>
+                                        <td id="email-val">--- podaj adres email ---</td>
+                                    </tr>
+                                    <tr class="space-row">
+                                        <th>Ilość osób:</th>
+                                        <td id="ilosob-val">--- podaj ilość osób ---</td>
+                                    </tr>
+                                    <tr class="space-row">
+                                        <th>Płatność:</th>
+                                        <td id="payment-val">--- wybierz płatność ---</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="flight-data-error p-3 text-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
+                        Nie podano wszystkich danych
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="right-div right-text">
+                    <div class="flight-wrapper">
+                        <h3>Twoja podróż</h3>
+
+                        <div class="list-group flight-info">
+
+                        </div>
+
+                        <div class="list-group flight-img-wrapper">
+                            <img class="plane-img" src="images/WAW.jpg" alt="" />
+                        </div>
+
+                        <div class="flight-template">
+                            <a href="#" class="list-group-item list-group-item-action __CLASS__" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Wylot __DEPARTURE__</h5>
+                                    <small>Cena: __PRICE__ PLN</small>
+                                </div>
+                                <p class="mb-1">Przylot: __ARRIVAL__</p>
+                                <small>Numer lotu: __NUMBER__</small>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer">
+        <div class="row align-items-center">
+            <p class="copy">Copyright &copy; 2022 Created by Ewelina</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+
+</html>
